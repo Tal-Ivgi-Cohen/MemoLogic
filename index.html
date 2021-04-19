@@ -9,20 +9,27 @@
 
 <body onload="initPage()">
     <header class="header">
-
         <div class="logo">MemoLogic</div>
+        <div class="main-nav">
+            <ul class="clean-list flex nav-list">
+                <li><a class="flex justify-content align-center active" href="#">Gallery</a></li>
+                <li><a class="flex justify-content align-center" href="#">Memes</a></li>
+                <li><a class="flex justify-content align-center" href="#">About</a></li>
+            </ul>
+        </div>
+
     </header>
 
     <section class="gallery">
         <div class="gallery-container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Gallery</h2>
+                    <h3 class="section-subheading text-muted">You need to select an image, add some text and downloads the your funny picture to your device</h3>
                 </div>
             </div>
         </div>
-        <div class="row list">
+        <div class="gallery-items row list">
 
 
         </div>
@@ -30,19 +37,17 @@
     </section>
 
     <div id="canvasModal">
-
         <div class="canvas-container" hidden>
-            <canvas class="my-canvas" width="400" height="400" style="outline:1px solid green">
+            <canvas class="my-canvas" width="500" height="500" onclick="drawText(event)">
             </canvas>
-
-            <div contenteditable>
-                <p>lala</p>
-            </div>
-            <div contenteditable>
-                <p>lala</p>
-            </div>
-
         </div>
+
+        <div class="text">
+            <textarea class="text-area">Text Line</textarea>
+            <button>Add</button>
+        </div>
+    </div>
+
     </div>
 
     <!-- <section class="me">
@@ -77,6 +82,7 @@
 
     <footer class="footer">
         <div class="logo">MemoLogic!</div>
+        <small> © 2021 Memologic.com - Coffeerights Tal Ivgi</small>
     </footer>
 
     <script src="js/gallery.service.js"></script>

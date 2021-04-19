@@ -29,29 +29,24 @@ function resizeCanvas() {
 }
 
 function renderCanvas() {
-    drawImg();
-}
-
-function drawImg() {
-    const meme = getGmeme();
-    var img = new Image()
-    img.src = `image/${meme.imgId}.jpg`;
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) //img,x,y,xend,yend
-        drawText();
+    const elImg = new Image()
+    var meme = getGmeme();
+    elImg.src = `image/${meme.imgId}.jpg`;
+    elImg.onload = () => {
+        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+        drawText(meme.lines[0].txt, 250, 150);
+        drawText(meme.lines[1].txt, 250, 400);
     }
 }
 
-function drawText() {
+function drawText(txt, x, y) {
     const meme = getGmeme();
     meme.lines.forEach(line => {
-        gCtx.textAlign = `${line.align}`;
-        gCtx.font = `${line.size} ${line.font}`;
-        gCtx.fillStyle = `${line.color}`;
-        gCtx.fillText(`${line.txt}`, line.pos.x, line.pos.y);
-        gCtx.lineWidth = 3;
+        gCtx.textAlign = line.align;
+        gCtx.font = line.font;
+        gCtx.fillStyle = line.color;
         gCtx.strokeStyle = line.stroke;
-        gCtx.strokeText(`${line.txt}`, line.pos.x, line.pos.y);
+        gCtx.strokeText(txt, x, y);
     })
 }
 
@@ -61,4 +56,9 @@ function renderGallery() {
         return `<div onclick="onImgSelect(${img.id})" class="gallery-img"><img src="image/${img.id}.jpg"></div>`
     })
     document.querySelector('.row.list').innerHTML = htmlStr.join('');
+}
+
+function onAddText() {
+    var elTxt = document.querySelector('.text-area');
+    var txt = elTxt.value
 }

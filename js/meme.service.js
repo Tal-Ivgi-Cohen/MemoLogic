@@ -2,37 +2,24 @@
 
 var gKeywords = { 'happy': 12, 'funny puk': 1 };
 
-
-/*Create a Canvas with a single image – the image shall be taken from 
-gMeme (managed by a memeService)*/
-
-
 var gMeme = {
     imgId: 5,
     selectedLineIdx: 0,
     lines: [{
-            txt: 'I never eat Falafel',
-            size: 20,
+            txt: 'Write your text',
+            size: 60,
             align: 'left',
             color: 'red',
             stroke: 'black',
             font: 'Impact',
-            pos: {
-                x: '400',
-                y: '100'
-            }
         },
         {
-            txt: 'I never eat Falafel',
-            size: 20,
+            txt: 'Write your text',
+            size: 60,
             align: 'left',
             color: 'red',
             stroke: 'black',
             font: 'Impact',
-            pos: {
-                x: '400',
-                y: '100'
-            }
         },
     ]
 }
