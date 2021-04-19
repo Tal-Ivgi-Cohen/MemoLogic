@@ -21,3 +21,9 @@ body {
     background-color: #292929;
     border-bottom: 7px #1e1e1e solid;
 }
+
+.canvas-container {
+    max-width: none;
+    height: 100%;
+    margin: 0;
+}

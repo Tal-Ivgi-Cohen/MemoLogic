@@ -7,15 +7,82 @@
     <link rel="icon" type="image/png" href="image/favicon.png">
 </head>
 
-<body>
+<body onload="initPage()">
     <header class="header">
 
         <div class="logo">MemoLogic</div>
     </header>
 
+    <section class="gallery">
+        <div class="gallery-container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Portfolio</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row list">
+
+
+        </div>
+        </div>
+    </section>
+
+    <div id="canvasModal">
+
+        <div class="canvas-container" hidden>
+            <canvas class="my-canvas" width="400" height="400" style="outline:1px solid green">
+            </canvas>
+
+            <div contenteditable>
+                <p>lala</p>
+            </div>
+            <div contenteditable>
+                <p>lala</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <section class="me">
+        <div class="row">
+            <div>
+                <div class="details">
+                    <img class="mx-auto rounded-circle" src="./image/me.jpg" alt="">
+                    <h4>Tal Ivgi</h4>
+                    <p>(Soon to be a)</p>
+                    <p>Fullstack Developer</p>
+                    <ul class="social-buttons">
+                        <li>
+                            <a href="https://www.facebook.com/tal.ivgi/">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/tal-ivgi-0167a9139/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <p>Hello, my name is Tal Ivgi, 26 years old from Herzliya. I did a bachelor's degree in labor studies and sociology at Tel Aviv University and then I started working in the field of technological recruitment. I worked as a technology recruitment
+                    coordinator for about two and a half years, during which time I recruited for a variety of positions in the entire technology spectrum, and over time I realized that I want to be on the other side, and that is my true passion.
+                </p>
+            </div>
+        </div>
+    </section>-->
+
     <footer class="footer">
         <div class="logo">MemoLogic!</div>
     </footer>
+
+    <script src="js/gallery.service.js"></script>
+    <script src="js/meme.service.js"></script>
+    <script src="js/memologic.controller.js"></script>
+
 </body>
 
 </html>
