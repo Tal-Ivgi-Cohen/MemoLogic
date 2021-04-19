@@ -1,0 +1,23 @@
+@import "./font.css";
+body {
+    background-color: aqua;
+}
+
+.header {
+    height: 130px;
+    background-color: #292929;
+    border-bottom: 7px #1e1e1e solid;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 40px;
+    font-family: euroFurence, sans-serif;
+    margin-inline-start: 20px;
+}
+
+.footer {
+    height: 130px;
+    background-color: #292929;
+    border-bottom: 7px #1e1e1e solid;
+}
