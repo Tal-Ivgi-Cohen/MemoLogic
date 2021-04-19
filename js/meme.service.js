@@ -7,17 +7,17 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [{
             txt: 'Write your text',
-            size: 60,
+            size: 100,
             align: 'left',
-            color: 'red',
+            color: 'white',
             stroke: 'black',
             font: 'Impact',
         },
         {
             txt: 'Write your text',
-            size: 60,
+            size: 100,
             align: 'left',
-            color: 'red',
+            color: 'white',
             stroke: 'black',
             font: 'Impact',
         },
@@ -30,4 +30,8 @@ function getGmeme() {
 
 function changeMemeImg(id) {
     gMeme.imgId = id
+}
+
+function updateText(val) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = val
 }

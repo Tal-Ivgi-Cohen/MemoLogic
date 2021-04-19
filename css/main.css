@@ -1,4 +1,8 @@
 @import "./font.css";
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: aqua;
 }
@@ -24,20 +28,19 @@ body {
 
 .canvas-container {
     max-width: none;
-    height: 50%;
+    height: 40%;
     margin: 0;
 }
 
 .gallery-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit minmax(100, 1fr));
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: repeat(auto-fit, 200px);
     gap: 5px;
+    padding: 5px 5px 5px 5px;
 }
 
 .gallery-img {
-    height: 200px;
-    width: 200px;
-    display: inline-block;
+    width: 100%;
     border: 1px solid black;
 }

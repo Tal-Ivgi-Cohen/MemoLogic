@@ -43,12 +43,17 @@
         </div>
 
         <div class="text">
-            <textarea class="text-area">Text Line</textarea>
-            <button>Add</button>
+            <input oninput="onAddText(this.value)" type="text" value="">
+
+            <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                <input name="img" id="imgData" type="hidden" />
+                <button class="btn" type="submit">Publish</button>
+                <button><a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img.jpg">Download</a></button>
+                <div class="share-container"></div>
+            </form>
         </div>
     </div>
 
-    </div>
 
     <!-- <section class="me">
         <div class="row">
