@@ -117,6 +117,11 @@ function onSetFillColor(val) {
     drawImg();
 }
 
+function onSetFilter(txt) {
+    setFilter(txt)
+    rrenderGallery();
+}
+
 
 function uploadImg(elForm, ev) {
     ev.preventDefault();

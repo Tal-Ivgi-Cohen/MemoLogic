@@ -1,6 +1,6 @@
 'use strict'
 const KEY = 'memes';
-var gKeywords = { 'happy': 12, 'funny puk': 1 };
+var gKeywords = gImgs[i].keywords
 var gImgs = [{
         id: 1,
         keywords: ['public'],
@@ -11,22 +11,22 @@ var gImgs = [{
     },
     {
         id: 3,
-        keywords: ['public'],
+        keywords: ['cute', 'sleep'],
     },
     {
         id: 4,
-        keywords: ['cute'],
+        keywords: ['sleep'],
     }, {
         id: 5,
-        keywords: ['public'],
+        keywords: ['cute'],
     },
     {
         id: 6,
-        keywords: ['cute'],
+        keywords: ['funny'],
     },
     {
         id: 7,
-        keywords: ['cute'],
+        keywords: ['funny'],
     },
     {
         id: 8,
@@ -34,42 +34,42 @@ var gImgs = [{
     },
     {
         id: 9,
-        keywords: ['cute'],
+        keywords: ['funnt'],
     },
     {
         id: 10,
-        keywords: ['cute'],
+        keywords: ['public'],
     },
     {
         id: 11,
-        keywords: ['cute'],
+        keywords: ['public'],
     },
     {
         id: 12,
-        keywords: ['cute'],
+        keywords: ['public'],
     }, {
         id: 13,
-        keywords: ['cute'],
+        keywords: ['movie'],
     },
     {
         id: 14,
-        keywords: ['cute'],
+        keywords: ['movie'],
     },
     {
         id: 15,
-        keywords: ['cute'],
+        keywords: ['movie'],
     },
     {
         id: 16,
-        keywords: ['cute'],
+        keywords: ['funny'],
     },
     {
         id: 17,
-        keywords: ['cute'],
+        keywords: ['public'],
     },
     {
         id: 18,
-        keywords: ['cute'],
+        keywords: ['movie'],
     },
 
 ];
@@ -102,6 +102,10 @@ var gMeme = {
             }
         },
     ]
+}
+
+var gFilterBy = {
+    gImgs: keywords,
 }
 
 function getGallery(imgId) {
@@ -180,3 +184,13 @@ function setStrokeColor(color) {
 function setFillColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
+
+function setFilter(filterBy) {
+    gFilterBy.category = filterBy.category;
+}
+
+/*function getKeywords() {
+    var keywords = gKeywords.filter(function(keyword) {
+        return book.name.includes(gFilterBy.category) &&
+            book.price <= gFilterBy.price
+    })*/
