@@ -1,6 +1,6 @@
 'use strict'
 const KEY = 'memes';
-var gImgs = [{
+/*var gImgs = [{
         id: 1,
         keywords: ['public'],
     },
@@ -75,4 +75,4 @@ var gImgs = [{
 
 function getGallery(imgId) {
     return gImgs;
-}
+}*/

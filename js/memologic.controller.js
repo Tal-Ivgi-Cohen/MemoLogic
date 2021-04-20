@@ -27,8 +27,13 @@ function resizeCanvas() {
 }
 
 function renderCanvas() {
-    const elImg = new Image()
-    var meme = getGmeme();
+    drawImg();
+}
+
+
+function drawImg() {
+    const meme = getGmeme();
+    var elImg = new Image()
     elImg.src = `image/${meme.imgId}.jpg`;
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
@@ -51,7 +56,7 @@ function drawText(txt, x, y) {
 function renderGallery() {
     const gallery = getGallery();
     var htmlStr = gallery.map(img => {
-        return `<div onclick="onChosenImg(${img.id})" class="gallery-img"><img src="image/${img.id}.jpg"></div>`
+        return `<div onclick="onChosenImg(${img.id})"><img class="gallery-img" src="image/${img.id}.jpg"></div>`
     })
     document.querySelector('.row.list').innerHTML = htmlStr.join('');
 }
@@ -62,11 +67,43 @@ function onAddText(val) {
     renderCanvas()
 }
 
+function onChangeSize(val) {
+    changeSize(val);
+    renderCanvas();
+}
+
+function onMoveLine(val) {
+    moveLine(val);
+    renderCanvas()
+}
+
+function onSwitchLine() {
+    const meme = getGmeme();
+    switchLine()
+    document.querySelector('.line-editor input').value = meme.lines[meme.selectedLineIdx].txt;
+    document.querySelector('.line-editor input').focus()
+}
+
+function onAddLine() {
+    addLine();
+    drawImg()
+}
+
+function onRemoveLine() {
+    removeLine();
+    drawImg()
+}
+
+function onChangeAlign(val) {
+
+}
+
+
+
 function uploadImg(elForm, ev) {
     ev.preventDefault();
     document.getElementById('imgData').value = gElCanvas.toDataURL("image/jpeg");
 
-    // A function to be called if the upload request succeeds
     function onSuccess(uploadedImgUrl) {
         uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
         document.querySelector('.share-container').innerHTML = `
@@ -77,7 +114,6 @@ function uploadImg(elForm, ev) {
         target="_blank"> Share to WhatsApp </a>   
         `
     }
-
     doUploadImg(elForm, onSuccess);
 }
 

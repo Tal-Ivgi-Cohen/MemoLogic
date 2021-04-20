@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Gallery</h2>
-                    <h3 class="section-subheading text-muted">You need to select an image, add some text and downloads the your funny picture to your device</h3>
+                    <h3 class="section-subheading">You need to select an image, add some text and downloads the your funny picture to your device</h3>
                 </div>
             </div>
         </div>
@@ -36,15 +36,30 @@
         </div>
     </section>
 
-    <div id="canvasModal">
+    <div class="canvas">
         <div class="canvas-container" hidden>
             <canvas class="my-canvas" width="500" height="500" onclick="drawText(event)">
             </canvas>
         </div>
 
-        <div class="text">
-            <input oninput="onAddText(this.value)" type="text" value="">
+        <div class="canvas-editor">
+            <div class="line-editor">
+                <input oninput="onAddText(this.value)" type="text" value="">
+                <button onclick="onMoveLine(20)">up</button>
+                <button onclick="onMoveLine(-20)">down</button>
+                <button onclick="onSwitchLine()"></button>
+                <button onclick="onAddLine()">++</button>
+                <button onclick="onRemoveLine()">--</button>
 
+            </div>
+            <div class="text-editor">
+                <button onclick="onChangeSize(5)">+</button>
+                <button onclick="onChangeSize(-5)">-</button>
+                <button onclick="onChangeAlign('right')">-</button>
+                <button onclick="onChangeAlign('center')">-</button>
+                <button onclick="onChangeAlign('left')">-</button>
+                <!--HERE I NEED TO PUT SELECT FOR FONTS-->
+            </div>
             <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                 <input name="img" id="imgData" type="hidden" />
                 <button class="btn" type="submit">Publish</button>
@@ -52,6 +67,7 @@
                 <div class="share-container"></div>
             </form>
         </div>
+    </div>
     </div>
 
 
@@ -90,7 +106,6 @@
         <small> © 2021 Memologic.com - Coffeerights Tal Ivgi</small>
     </footer>
 
-    <script src="js/gallery.service.js"></script>
     <script src="js/meme.service.js"></script>
     <script src="js/memologic.controller.js"></script>
 
