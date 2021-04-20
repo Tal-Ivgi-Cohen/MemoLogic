@@ -4,20 +4,19 @@
 <head>
     <title>Memo Logic</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" href="image/favicon.jpg">
+    <link rel="icon" type="image/png" href="image/favicon.png">
 </head>
 
 <body onload="initPage()">
-    <header class="header">
-        <div class="nav-container container flex space-between align-center">
-            <div class="logo">MemoLogic</div>
-            <div class="main-nav">
-                <ul class="clean-list flex nav-list">
-                    <li><a class="flex align-center active" href="#">Gallery</a></li>
-                    <li><a class="flex align-center" href="#">Memes</a></li>
-                    <li><a class="flex align-center" href="#">About</a></li>
-                </ul>
-            </div>
+    <header class="nav-container container flex space-between align-center">
+        <div class="logo">MemoLogic</div>
+        <div class="main-nav flex clean-list">
+            <ul class="clean-list flex nav-list">
+                <li><a class="flex align-center active" href="#">Gallery</a></li>
+                <li><a class="flex align-center" href="#">Memes</a></li>
+                <li><a class="flex align-center" href="#">About</a></li>
+            </ul>
+        </div>
         </div>
     </header>
 
@@ -37,77 +36,87 @@
         </div>
     </section>
 
-    <div class="canvas">
+    <div class="canvas flex">
         <div class="canvas-container" hidden>
+            <button onclick="closeCanvas()">
+                <img src="icon/close.PNG" width=15 heigh=15>
+            </button>
             <canvas class="my-canvas" width="500" height="500" onclick="drawText(event)">
             </canvas>
-        </div>
+            <div class="canvas-editor">
+                <div class="line-editor">
+                    <input oninput="onAddText(this.value)" type="text" value="">
+                    <button onclick="onMoveLine(-20)">
+                        <img src="icon/up.PNG" width=15 heigh=15>
+                    </button>
+                    <button onclick="onMoveLine(20)">
+                        <img src="icon/down-arrow.PNG" width=15 heigh=15>
+                    </button>
+                    <button onclick="onSwitchLine()">
+                    <img src="icon/up-and-down-opposite-double-arrows-side-by-side.png" width=15 heigh=15>
+                    </button>
+                    <button onclick="onAddLine()">
+                        <img src="icon/add.png" width=15 heigh=15>
+                    </button>
+                    <button onclick="onRemoveLine()">
+                        <img src="icon/trash.png" width=15 heigh=15>       
+                    </button>
 
-        <div class="canvas-editor">
-            <div class="line-editor">
-                <input oninput="onAddText(this.value)" type="text" value="">
-                <button onclick="onMoveLine(-20)">up</button>
-                <button onclick="onMoveLine(20)">down</button>
-                <button onclick="onSwitchLine()"></button>
-                <button onclick="onAddLine()">++</button>
-                <button onclick="onRemoveLine()">--</button>
-
-            </div>
-            <div class="text-editor">
-                <button onclick="onChangeSize(5)">+</button>
-                <button onclick="onChangeSize(-5)">-</button>
-                <button onclick="onChangeAlign('right')">RT</button>
-                <button onclick="onChangeAlign('center')">CR</button>
-                <button onclick="onChangeAlign('left')">LT</button>
-                <select onchange="onChangeFont(this.value)">
+                </div>
+                <div class="text-editor">
+                    <button onclick="onChangeSize(5)">
+                        <img src="icon/increase font - icon.png" width=15 heigh=15>
+                    </button>
+                    <button onclick="onChangeSize(-5)">
+                        <img src="icon/decrease font - icon.png" width=15 heigh=15>
+                    </button>
+                    <button onclick="onChangeAlign('right')">
+                        <img src="icon/align-to-right.png" width=15 heigh=15>
+                    </button>
+                    <button onclick="onChangeAlign('center')">                   
+                        <img src="icon/center-text-alignment.png" width=15 heigh=15>
+                    </button>
+                    <button onclick="onChangeAlign('left')">
+                        <img src="icon/align-to-left.png" width=15 heigh=15>
+                    </button>
+                    <select onchange="onChangeFont(this.value)">
                 <option value="Impact">Impact</option>
                 <option value="Ariel">Ariel</option>
                 <option value="Lato">Lato</option>
                 </select>
-            </div>
-            <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
-                <input name="img" id="imgData" type="hidden" />
-                <button class="btn" type="submit">Publish</button>
-                <button><a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img.jpg">Download</a></button>
-                <div class="share-container"></div>
-            </form>
-        </div>
-    </div>
-    </div>
-
-
-    <!-- <section class="me">
-        <div class="row">
-            <div>
-                <div class="details">
-                    <img class="mx-auto rounded-circle" src="./image/me.jpg" alt="">
-                    <h4>Tal Ivgi</h4>
-                    <p>(Soon to be a)</p>
-                    <p>Fullstack Developer</p>
-                    <ul class="social-buttons">
-                        <li>
-                            <a href="https://www.facebook.com/tal.ivgi/">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.linkedin.com/in/tal-ivgi-0167a9139/">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
+                    <input onchange="onSetStrokeColor(this.value)" type="color" id="line-color" name="line-color"><img src="icon/text stroke.png" width=15 heigh=15>
+                    <input onchange="onSetFillColor(this.value)" type="color" id="fill-color" name="fill-color"><img src="icon/paint-board-and-brush.png" width=15 heigh=15>
                 </div>
-            </div>
-            <div>
-                <p>Hello, my name is Tal Ivgi, 26 years old from Herzliya. I did a bachelor's degree in labor studies and sociology at Tel Aviv University and then I started working in the field of technological recruitment. I worked as a technology recruitment
-                    coordinator for about two and a half years, during which time I recruited for a variety of positions in the entire technology spectrum, and over time I realized that I want to be on the other side, and that is my true passion.
-                </p>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="btn" type="submit">Publish</button>
+                    <button><a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img.jpg">Download</a></button>
+                    <div class="share-container"></div>
+                </form>
             </div>
         </div>
-    </section>-->
+    </div>
+    </div>
+
+
+    <section class="me">
+        <div class="details">
+            <div><img class="my-photo" src="./image/me.jpg" alt=""></div>
+            <h4>Tal Ivgi</h4>
+            <p>(Soon to be a)</p>
+            <p>Fullstack Developer</p>
+            <ul class="social-buttons">
+                <li>
+                    <a class="fa facebook" href="https://www.facebook.com/tal.ivgi/"></a>
+                </li>
+                <li>
+                    <a class="fa linkedin" href="https://www.linkedin.com/in/tal-ivgi-0167a9139/"></a>
+                </li>
+            </ul>
+    </section>
 
     <footer class="footer-container">
-        <div class="logo">MemoLogic!</div>
+        <div class="logo">MemoLogic</div>
         <small> © 2021 Memologic.com - Coffeerights Tal Ivgi</small>
     </footer>
 

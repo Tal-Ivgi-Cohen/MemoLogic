@@ -80,7 +80,7 @@ var gMeme = {
     lines: [{
             txt: 'First line',
             size: 60,
-            align: 'left',
+            align: 'center',
             color: 'white',
             stroke: 'black',
             font: 'Impact',
@@ -92,7 +92,7 @@ var gMeme = {
         {
             txt: 'Second line',
             size: 60,
-            align: 'left',
+            align: 'center',
             color: 'white',
             stroke: 'black',
             font: 'Impact',
@@ -142,7 +142,7 @@ function createLine() {
     const line = {
         txt: 'Write your text',
         size: 100,
-        align: 'left',
+        align: 'center',
         color: 'white',
         stroke: 'black',
         font: 'Impact',
@@ -171,4 +171,12 @@ function downloadCanvas(elLink) {
     const data = gElCanvas.toDataURL()
     elLink.href = data
     elLink.download = 'my-img.jpg'
+}
+
+function setStrokeColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].stroke = color
+}
+
+function setFillColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
 }

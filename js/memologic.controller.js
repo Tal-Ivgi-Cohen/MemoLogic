@@ -13,17 +13,21 @@ function onChosenImg(id) {
     changeMemeImg(id);
     resizeCanvas();
     renderCanvas();
-    toggleGenerator()
+    onOpenCanvas()
 }
 
-function toggleGenerator() {
+function onOpenCanvas() {
     document.querySelector('.canvas-container').hidden = false
 }
 
+function closeCanvas() {
+    document.querySelector('.canvas-container').hidden = true;
+}
+
 function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container');
-    document.querySelector('.my-canvas').style.width = '100%'
-    document.querySelector('.my-canvas').style.height = '100%'
+    const elContainer = document.querySelector('.canvas-container')
+    elContainer.width = gElCanvas.width
+    elContainer.height = gElCanvas.height
 }
 
 function renderCanvas() {
@@ -63,8 +67,7 @@ function renderGallery() {
 
 function onAddText(val) {
     updateText(val);
-    console.log(val);
-    renderCanvas()
+    drawImg();
 }
 
 function onChangeSize(val) {
@@ -101,6 +104,16 @@ function onChangeAlign(val) {
 
 function onChangeFont(val) {
     changeFont(val);
+    drawImg();
+}
+
+function onSetStrokeColor(val) {
+    setStrokeColor(val)
+    drawImg();
+}
+
+function onSetFillColor(val) {
+    setFillColor(val)
     drawImg();
 }
 

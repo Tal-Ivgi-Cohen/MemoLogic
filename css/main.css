@@ -1,35 +1,56 @@
 @import "./base.css";
 @import "./font.css";
+.fa {
+    font-family: brands;
+}
+
 header {
-    height: 80px;
+    height: 160px;
     background-color: #ff7f00;
     border-bottom: 7px #1e1e1e solid;
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .logo {
     color: #ffffff;
     margin: 3.5px 400.8px 8px 0;
-    font-size: 40px;
+    font-size: 1.875rem;
     font-family: shadowInto, sans-serif;
     margin-inline-start: 20px;
+    letter-spacing: 0.2em;
 }
 
 .main-nav {
-    font-family: lato-bold;
-    color: white;
-    text-decoration: none;
-    list-style: none;
-    height: 130px;
-    width: 130px;
-    transition: box-shadow .3s;
+    font-family: LatoBold;
+    color: #ffffff;
+    position: static;
+    background-color: transparent;
+    height: initial;
+    width: initial;
+    transform: translateY(0%);
 }
 
 .nav-list {
     flex-direction: row;
 }
 
-.nav-container {
-    height: 100%;
+.main-nav a {
+    margin-inline-end: 100px;
+    color: inherit;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    margin: 24.7px 12.8px 0.2px 12.6px;
+    padding: 3.8px 3.2px 2.9px 3.5px;
+    border-radius: 6px;
+    background-color: #ffffff;
 }
 
 .footer {
@@ -39,9 +60,24 @@ header {
 }
 
 .canvas-container {
-    max-width: none;
-    height: 400%0;
+    position: fixed;
+    top: 10%;
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 5;
+    text-align: center;
+    padding: 20px;
     margin: 0;
+}
+
+.my-canvas {
+    flex-basis: 50%;
+}
+
+.canvas-editor {
+    flex-basis: 50%;
+    flex-direction: column;
 }
 
 .gallery-items {
@@ -57,11 +93,48 @@ header {
     border: 1px solid black;
 }
 
+.me {
+    height: 200px;
+    background-color: #ffffff;
+    border-bottom: 7px #1e1e1e solid;
+}
+
+.my-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px orange solid;
+}
+
+.fa {
+    font-family: brands;
+}
+
+.fa.facebook::before {
+    content: "\f39e";
+}
+
+.fa.facebook:hover {
+    background-color: #516fad;
+}
+
+.fa.linkedin::before {
+    content: "\f0e1";
+}
+
+.fa.linkedin:hover {
+    background-color: #516fad;
+}
+
 .footer-container {
     height: 100px;
     text-align: center;
     background-color: #ff7f00;
     border-top: 7px #1e1e1e solid;
+}
+
+.footer-container small {
+    color: white;
 }
 
 
