@@ -157,3 +157,12 @@ button {
     margin: 0;
     padding: 0;
 }
+
+@media (min-width:450px) {
+    .gallery-items {
+        grid-template-columns: repeat(auto-fill, 200px);
+    }
+    .gallery-img {
+        width: 200px;
+    }
+}
