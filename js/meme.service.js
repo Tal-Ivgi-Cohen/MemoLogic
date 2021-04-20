@@ -78,20 +78,28 @@ var gMeme = {
     imgId: 5,
     selectedLineIdx: 0,
     lines: [{
-            txt: 'Write your text',
-            size: 100,
+            txt: 'First line',
+            size: 60,
             align: 'left',
             color: 'white',
             stroke: 'black',
             font: 'Impact',
+            pos: {
+                x: 250,
+                y: 150,
+            }
         },
         {
-            txt: 'Write your text',
-            size: 100,
+            txt: 'Second line',
+            size: 60,
             align: 'left',
             color: 'white',
             stroke: 'black',
             font: 'Impact',
+            pos: {
+                x: 250,
+                y: 400,
+            }
         },
     ]
 }
@@ -117,6 +125,7 @@ function changeSize(val) {
 }
 
 function moveLine(val) {
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += val
 
 }
 
@@ -130,17 +139,36 @@ function addLine() {
 }
 
 function createLine() {
-    var line = {
+    const line = {
         txt: 'Write your text',
         size: 100,
         align: 'left',
         color: 'white',
         stroke: 'black',
         font: 'Impact',
+        pos: {
+            x: 250,
+            y: 300,
+        }
     }
+    return line
 }
 
 function removeLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     gMeme.selectedLineIdx--
+}
+
+function changeAlign(val) {
+    gMeme.lines[gMeme.selectedLineIdx].align = val
+}
+
+function changeFont(val) {
+    gMeme.lines[gMeme.selectedLineIdx].font = val
+}
+
+function downloadCanvas(elLink) {
+    const data = gElCanvas.toDataURL()
+    elLink.href = data
+    elLink.download = 'my-img.jpg'
 }

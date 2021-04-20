@@ -4,20 +4,21 @@
 <head>
     <title>Memo Logic</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" href="image/favicon.png">
+    <link rel="icon" type="image/png" href="image/favicon.jpg">
 </head>
 
 <body onload="initPage()">
     <header class="header">
-        <div class="logo">MemoLogic</div>
-        <div class="main-nav">
-            <ul class="clean-list flex nav-list">
-                <li><a class="flex justify-content align-center active" href="#">Gallery</a></li>
-                <li><a class="flex justify-content align-center" href="#">Memes</a></li>
-                <li><a class="flex justify-content align-center" href="#">About</a></li>
-            </ul>
+        <div class="nav-container container flex space-between align-center">
+            <div class="logo">MemoLogic</div>
+            <div class="main-nav">
+                <ul class="clean-list flex nav-list">
+                    <li><a class="flex align-center active" href="#">Gallery</a></li>
+                    <li><a class="flex align-center" href="#">Memes</a></li>
+                    <li><a class="flex align-center" href="#">About</a></li>
+                </ul>
+            </div>
         </div>
-
     </header>
 
     <section class="gallery">
@@ -45,8 +46,8 @@
         <div class="canvas-editor">
             <div class="line-editor">
                 <input oninput="onAddText(this.value)" type="text" value="">
-                <button onclick="onMoveLine(20)">up</button>
-                <button onclick="onMoveLine(-20)">down</button>
+                <button onclick="onMoveLine(-20)">up</button>
+                <button onclick="onMoveLine(20)">down</button>
                 <button onclick="onSwitchLine()"></button>
                 <button onclick="onAddLine()">++</button>
                 <button onclick="onRemoveLine()">--</button>
@@ -55,10 +56,14 @@
             <div class="text-editor">
                 <button onclick="onChangeSize(5)">+</button>
                 <button onclick="onChangeSize(-5)">-</button>
-                <button onclick="onChangeAlign('right')">-</button>
-                <button onclick="onChangeAlign('center')">-</button>
-                <button onclick="onChangeAlign('left')">-</button>
-                <!--HERE I NEED TO PUT SELECT FOR FONTS-->
+                <button onclick="onChangeAlign('right')">RT</button>
+                <button onclick="onChangeAlign('center')">CR</button>
+                <button onclick="onChangeAlign('left')">LT</button>
+                <select onchange="onChangeFont(this.value)">
+                <option value="Impact">Impact</option>
+                <option value="Ariel">Ariel</option>
+                <option value="Lato">Lato</option>
+                </select>
             </div>
             <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                 <input name="img" id="imgData" type="hidden" />
@@ -101,7 +106,7 @@
         </div>
     </section>-->
 
-    <footer class="footer">
+    <footer class="footer-container">
         <div class="logo">MemoLogic!</div>
         <small> © 2021 Memologic.com - Coffeerights Tal Ivgi</small>
     </footer>

@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Lato, serif;
+    color: #606060;
+    line-height: 1.25;
+}
+
+body {
+    font-size: 1rem;
+    margin: 0;
+    background-color: #e3e3e3;
+}
+
+a {
+    text-decoration: none;
+}

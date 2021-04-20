@@ -1,23 +1,35 @@
+@import "./base.css";
 @import "./font.css";
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: aqua;
-}
-
-.header {
-    height: 130px;
-    background-color: #292929;
+header {
+    height: 80px;
+    background-color: #ff7f00;
     border-bottom: 7px #1e1e1e solid;
 }
 
 .logo {
     color: #ffffff;
+    margin: 3.5px 400.8px 8px 0;
     font-size: 40px;
-    font-family: euroFurence, sans-serif;
+    font-family: shadowInto, sans-serif;
     margin-inline-start: 20px;
+}
+
+.main-nav {
+    font-family: lato-bold;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    height: 130px;
+    width: 130px;
+    transition: box-shadow .3s;
+}
+
+.nav-list {
+    flex-direction: row;
+}
+
+.nav-container {
+    height: 100%;
 }
 
 .footer {
@@ -28,7 +40,7 @@ body {
 
 .canvas-container {
     max-width: none;
-    height: 40%;
+    height: 400%0;
     margin: 0;
 }
 
@@ -43,4 +55,32 @@ body {
 .gallery-img {
     width: 100%;
     border: 1px solid black;
+}
+
+.footer-container {
+    height: 100px;
+    text-align: center;
+    background-color: #ff7f00;
+    border-top: 7px #1e1e1e solid;
+}
+
+
+/*HELPERS*/
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }

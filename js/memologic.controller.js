@@ -30,26 +30,26 @@ function renderCanvas() {
     drawImg();
 }
 
-
 function drawImg() {
     const meme = getGmeme();
-    var elImg = new Image()
-    elImg.src = `image/${meme.imgId}.jpg`;
-    elImg.onload = () => {
-        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(meme.lines[0].txt, 250, 150);
-        drawText(meme.lines[1].txt, 250, 400);
+    var img = new Image()
+    img.src = `image/${meme.imgId}.jpg`;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) //img,x,y,xend,yend
+        drawText();
     }
 }
 
-function drawText(txt, x, y) {
+function drawText() {
     const meme = getGmeme();
     meme.lines.forEach(line => {
-        gCtx.textAlign = line.align;
-        gCtx.font = line.font;
-        gCtx.fillStyle = line.color;
+        gCtx.textAlign = `${line.align}`;
+        gCtx.font = `${line.size}px ${line.font}`;
+        gCtx.fillStyle = `${line.color}`;
+        gCtx.fillText(`${line.txt}`, line.pos.x, line.pos.y);
+        gCtx.lineWidth = 3;
         gCtx.strokeStyle = line.stroke;
-        gCtx.strokeText(txt, x, y);
+        gCtx.strokeText(`${line.txt}`, line.pos.x, line.pos.y);
     })
 }
 
@@ -69,12 +69,12 @@ function onAddText(val) {
 
 function onChangeSize(val) {
     changeSize(val);
-    renderCanvas();
+    drawImg()
 }
 
 function onMoveLine(val) {
     moveLine(val);
-    renderCanvas()
+    drawImg()
 }
 
 function onSwitchLine() {
@@ -95,9 +95,14 @@ function onRemoveLine() {
 }
 
 function onChangeAlign(val) {
-
+    changeAlign(val);
+    drawImg();
 }
 
+function onChangeFont(val) {
+    changeFont(val);
+    drawImg();
+}
 
 
 function uploadImg(elForm, ev) {

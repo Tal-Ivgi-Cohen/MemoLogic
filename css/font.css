@@ -17,3 +17,8 @@
     font-family: brands;
     src: url(../fonts/awsome/fa-brands-400.ttf);
 }
+
+@font-face {
+    font-family: shadowInto;
+    src: url(../fonts/shadowInto/ShadowsIntoLight-Regular.ttf);
+}
