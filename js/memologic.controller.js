@@ -126,10 +126,10 @@ function uploadImg(elForm, ev) {
         uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
         document.querySelector('.share-container').innerHTML = `
         <button><a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
-           Share   
+        <img src="icon/facebook-logo.PNG" width=15 heigh=15/>   
         </a></button>
         <button>   <a href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="share/whatsapp/share"  
-        target="_blank"> Share to WhatsApp </a>   
+        target="_blank"> <img src="icon/whatsapp.PNG" width=20 heigh=20/> </a>   
         `
     }
     doUploadImg(elForm, onSuccess);
