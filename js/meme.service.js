@@ -1,74 +1,92 @@
 'use strict'
-const KEY = 'memes';
-var gKeywords = gImgs[i].keywords
+//const KEY = 'memes';
+//var gKeywords = gImgs[i].keywords
 var gImgs = [{
         id: 1,
+        url: 'image/1.jpg',
         keywords: ['public'],
     },
     {
         id: 2,
+        url: 'image/2.jpg',
         keywords: ['cute'],
     },
     {
         id: 3,
+        url: 'image/3.jpg',
         keywords: ['cute', 'sleep'],
     },
     {
         id: 4,
+        url: 'image/4.jpg',
         keywords: ['sleep'],
     }, {
         id: 5,
+        url: 'image/5.jpg',
         keywords: ['cute'],
     },
     {
         id: 6,
+        url: 'image/6.jpg',
         keywords: ['funny'],
     },
     {
         id: 7,
+        url: 'image/7.jpg',
         keywords: ['funny'],
     },
     {
         id: 8,
+        url: 'image/8.jpg',
         keywords: ['cute'],
     },
     {
         id: 9,
+        url: 'image/9.jpg',
         keywords: ['funnt'],
     },
     {
         id: 10,
+        url: 'image/10.jpg',
         keywords: ['public'],
     },
     {
         id: 11,
+        url: 'image/11.jpg',
         keywords: ['public'],
     },
     {
         id: 12,
+        url: 'image/12.jpg',
         keywords: ['public'],
     }, {
         id: 13,
+        url: 'image/13.jpg',
         keywords: ['movie'],
     },
     {
         id: 14,
+        url: 'image/14.jpg',
         keywords: ['movie'],
     },
     {
         id: 15,
+        url: 'image/15.jpg',
         keywords: ['movie'],
     },
     {
         id: 16,
+        url: 'image/16.jpg',
         keywords: ['funny'],
     },
     {
         id: 17,
+        url: 'image/17.jpg',
         keywords: ['public'],
     },
     {
         id: 18,
+        url: 'image/18.jpg',
         keywords: ['movie'],
     },
 
@@ -104,9 +122,9 @@ var gMeme = {
     ]
 }
 
-var gFilterBy = {
+/*var gFilterBy = {
     gImgs: keywords,
-}
+}*/
 
 function getGallery(imgId) {
     return gImgs;

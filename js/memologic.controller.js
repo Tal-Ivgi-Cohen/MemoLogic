@@ -60,7 +60,7 @@ function drawText() {
 function renderGallery() {
     const gallery = getGallery();
     var htmlStr = gallery.map(img => {
-        return `<div onclick="onChosenImg(${img.id})"><img class="gallery-img" src="image/${img.id}.jpg"></div>`
+        return `<div onclick="onChosenImg(${img.id})"><img class="gallery-img" src="${img.url}"></div>`
     })
     document.querySelector('.row.list').innerHTML = htmlStr.join('');
 }
@@ -85,6 +85,7 @@ function onSwitchLine() {
     switchLine()
     document.querySelector('.line-editor input').value = meme.lines[meme.selectedLineIdx].txt;
     document.querySelector('.line-editor input').focus()
+    document.querySelector('.line-editor input').select()
 }
 
 function onAddLine() {
@@ -117,10 +118,10 @@ function onSetFillColor(val) {
     drawImg();
 }
 
-function onSetFilter(txt) {
+/*function onSetFilter(txt) {
     setFilter(txt)
     rrenderGallery();
-}
+}*/
 
 
 function uploadImg(elForm, ev) {
@@ -133,7 +134,7 @@ function uploadImg(elForm, ev) {
         <button><a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
         <img src="icon/facebook-logo.PNG" width=15 heigh=15/>   
         </a></button>
-        <button>   <a href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="share/whatsapp/share"  
+        <button>   <a href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="./share/whatsapp/share"  
         target="_blank"> <img src="icon/whatsapp.PNG" width=20 heigh=20/> </a>   
         `
     }
