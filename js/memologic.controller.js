@@ -130,7 +130,7 @@ function uploadImg(elForm, ev) {
         <img src="./icon/facebook-logo.PNG" width=15 heigh=15/>   
         </a></button>
         <button class="canvas-btn">   <a href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="share/whatsapp/share"  
-        target="_blank"> <img src="./icon/whatsapp.PNG" width=20 heigh=20/> </a>  </button> 
+        target="_blank"> <img src="./icon/whatsapp.PNG" width=20 heigh=20/> </a></button> 
         `
     }
     doUploadImg(elForm, onSuccess);
