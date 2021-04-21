@@ -1,5 +1,4 @@
 'use strict'
-//const KEY = 'memes';
 //var gKeywords = gImgs[i].keywords
 var gImgs = [{
         id: 1,
@@ -163,14 +162,14 @@ function addLine() {
 function createLine() {
     const line = {
         txt: 'Write your text',
-        size: 100,
+        size: 60,
         align: 'center',
         color: 'white',
         stroke: 'black',
         font: 'Impact',
         pos: {
             x: 250,
-            y: 300,
+            y: getRandomIntInclusive(200, 390)
         }
     }
     return line
