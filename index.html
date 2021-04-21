@@ -84,13 +84,13 @@
                 </div>
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                     <input name="img" id="imgData" type="hidden" />
-                    <button class="canvas-btn" class="btn" type="submit">
-                        <img src="icon/share.PNG" width=15 heigh=15/>  
-                    </button>
-                    <button class="canvas-btn"><a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=15 heigh=15/></a>
-                    </button>
+                    <button class="canvas-btn" type="submit"><img src="icon/share.PNG" width=15 heigh=15/></button>
+                    <a href="#" class="canvas-btn" onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=15 heigh=15/></a>
                     <div class="share-container"></div>
                 </form>
+
+
+
             </div>
         </div>
     </div>
