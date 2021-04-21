@@ -166,6 +166,14 @@ header {
     background-color: #516fad;
 }
 
+.fa.whatsapp::before {
+    content: "\f232";
+}
+
+.fa.whatsapp:hover {
+    background-color: #5fa14e;
+}
+
 
 /*HELPERS*/
 
