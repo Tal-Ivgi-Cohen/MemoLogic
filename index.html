@@ -20,11 +20,6 @@
         </div>
     </header>
 
-    <!--<section class="meme-filter">
-        <h3>Filter By:</h3>
-        <input type="text" oninput="onSetFilter(this.value)" />
-    </section>-->
-
     <section class="gallery">
         <div class="gallery-container">
             <h2 class="gallery-title">Gallery</h2>
@@ -36,65 +31,66 @@
     </section>
 
     <div class="canvas-container " hidden>
-        <button onclick="closeCanvas()">
+        <div class="wrap">
+            <button class="canvas-btn" onclick="closeCanvas()">
                 <img src="icon/close.PNG" width=15 heigh=15>
             </button>
-        <canvas class="my-canvas flex space-between" width="450" height="450" onclick="drawText(event)">
-            </canvas>
-        <div class="canvas-editor space-between flex-column ">
-            <div class="line-editor">
-                <input oninput="onAddText(this.value)" type="text" value="">
-                <button onclick="onMoveLine(-20)">
+            <div class="flex space-between"><canvas class="my-canvas" width="500" height="500" onclick="drawText(event)">
+            </canvas></div>
+            <div class="canvas-editor space-around flex-column ">
+                <div class="line-editor">
+                    <input oninput="onAddText(this.value)" type="text" value="">
+                    <button class="canvas-btn" onclick="onMoveLine(-20)">
                         <img src="icon/up.PNG" width=15 heigh=15>
                     </button>
-                <button onclick="onMoveLine(20)">
+                    <button class="canvas-btn" onclick="onMoveLine(20)">
                         <img src="icon/down-arrow.PNG" width=15 heigh=15>
                     </button>
-                <button onclick="onSwitchLine()">
+                    <button class="canvas-btn" onclick="onSwitchLine()">
                     <img src="icon/up-and-down-opposite-double-arrows-side-by-side.png" width=15 heigh=15>
                     </button>
-                <button onclick="onAddLine()">
+                    <button class="canvas-btn" onclick="onAddLine()">
                         <img src="icon/add.png" width=15 heigh=15>
                     </button>
-                <button onclick="onRemoveLine()">
+                    <button class="canvas-btn" onclick="onRemoveLine()">
                         <img src="icon/trash.png" width=15 heigh=15>       
                     </button>
 
-            </div>
-            <div class="text-editor">
-                <button onclick="onChangeSize(5)">
+                </div>
+                <div class="text-editor">
+                    <button class="canvas-btn" onclick="onChangeSize(5)">
                         <img src="icon/increase font - icon.png" width=15 heigh=15>
                     </button>
-                <button onclick="onChangeSize(-5)">
+                    <button class="canvas-btn" onclick="onChangeSize(-5)">
                         <img src="icon/decrease font - icon.png" width=15 heigh=15>
                     </button>
-                <button onclick="onChangeAlign('right')">
+                    <button class="canvas-btn" onclick="onChangeAlign('right')">
                         <img src="icon/align-to-right.png" width=15 heigh=15>
                     </button>
-                <button onclick="onChangeAlign('center')">                   
+                    <button class="canvas-btn" onclick="onChangeAlign('center')">                   
                         <img src="icon/center-text-alignment.png" width=15 heigh=15>
                     </button>
-                <button onclick="onChangeAlign('left')">
+                    <button class="canvas-btn" onclick="onChangeAlign('left')">
                         <img src="icon/align-to-left.png" width=15 heigh=15>
                     </button>
-                <select onchange="onChangeFont(this.value)">
+                    <select onchange="onChangeFont(this.value)">
                 <option value="Impact">Impact</option>
                 <option value="Ariel">Ariel</option>
                 </select>
-                <input onchange="onSetStrokeColor(this.value)" type="color" id="line-color" name="line-color"><img src="icon/text stroke.png" width=15 heigh=15>
-                <input onchange="onSetFillColor(this.value)" type="color" id="fill-color" name="fill-color"><img src="icon/paint-board-and-brush.png" width=15 heigh=15>
-            </div>
-            <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
-                <input name="img" id="imgData" type="hidden" />
-                <button class="btn" type="submit">
+                    <input onchange="onSetStrokeColor(this.value)" type="color" id="line-color" name="line-color"><img src="icon/text stroke.png" width=15 heigh=15>
+                    <input onchange="onSetFillColor(this.value)" type="color" id="fill-color" name="fill-color"><img src="icon/paint-board-and-brush.png" width=15 heigh=15>
+                </div>
+                <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="canvas-btn" class="btn" type="submit">
                         <img src="icon/share.PNG" width=15 heigh=15/>  
                     </button>
-                <button><a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=15 heigh=15/></a>
+                    <button class="canvas-btn"><a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=15 heigh=15/></a>
                     </button>
-                <div class="share-container"></div>
-            </form>
+                    <div class="share-container"></div>
+                </form>
+            </div>
         </div>
-
     </div>
     </div>
 

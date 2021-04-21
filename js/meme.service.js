@@ -1,5 +1,4 @@
 'use strict'
-//var gKeywords = gImgs[i].keywords
 var gImgs = [{
         id: 1,
         url: 'image/1.jpg',
@@ -121,9 +120,6 @@ var gMeme = {
     ]
 }
 
-/*var gFilterBy = {
-    gImgs: keywords,
-}*/
 
 function getGallery(imgId) {
     return gImgs;
@@ -201,13 +197,3 @@ function setStrokeColor(color) {
 function setFillColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
-
-function setFilter(filterBy) {
-    gFilterBy.category = filterBy.category;
-}
-
-/*function getKeywords() {
-    var keywords = gKeywords.filter(function(keyword) {
-        return book.name.includes(gFilterBy.category) &&
-            book.price <= gFilterBy.price
-    })*/
