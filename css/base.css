@@ -4,7 +4,7 @@
 
 html {
     font-family: Lato, serif;
-    line-height: 1.714;
+    line-height: 1.25;
 }
 
 body {
@@ -19,10 +19,15 @@ h3,
 h4,
 h5,
 p {
-    margin: 0;
+    margin: 0 0 1rem;
     text-align: center;
 }
 
 a {
     text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
 }

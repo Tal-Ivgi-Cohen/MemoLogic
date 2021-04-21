@@ -130,9 +130,9 @@ function uploadImg(elForm, ev) {
     function onSuccess(uploadedImgUrl) {
         uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
         document.querySelector('.share-container').innerHTML = `
-        <button ><a class="canvas-btn fa facebook" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">   
+        <button class="canvas-btn" ><a class="fa facebook" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">   
         </a></button>
-        <button><a class="canvas-btn fa whatsapp" href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="share/whatsapp/share" target="_blank"></a></button> 
+        <button class="canvas-btn"><a class="fa whatsapp" href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="share/whatsapp/share" target="_blank"></a></button> 
         `
     }
     doUploadImg(elForm, onSuccess);
@@ -151,4 +151,8 @@ function doUploadImg(elForm, onSuccess) {
         .catch(function(err) {
             console.error(err)
         })
+}
+
+function toggleMenu() {
+    document.body.classList.toggle('menu-open')
 }

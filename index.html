@@ -8,6 +8,7 @@
 </head>
 
 <body onload="initPage()">
+    <div class="main-screen" onclick="toggleMenu()"></div>
     <header class="nav-container container flex space-between align-center">
         <div class="logo">MemoLogic</div>
         <ul class=" main-nav clean-list flex">
@@ -16,7 +17,6 @@
             <li><a class="flex align-center justify-content" href="#">About</a></li>
         </ul>
         <button class="btn-menu" onclick="toggleMenu()">☰</button>
-
         </div>
     </header>
 
@@ -85,7 +85,8 @@
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                     <input name="img" id="imgData" type="hidden" />
                     <button class="canvas-btn" type="submit"><img src="icon/share.PNG" width=15 heigh=15/></button>
-                    <a href="#" class="canvas-btn" onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=15 heigh=15/></a>
+                    <button class="canvas-btn">     
+                    <a href="#"  onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=15 heigh=15/></a></button>
                     <div class="share-container"></div>
                 </form>
 
@@ -96,7 +97,7 @@
     </div>
     </div>
 
-    <footer class="footer-container">
+    <footer class="footer-container container">
         <div class="footer-logo">MemoLogic</div>
         <h4> © 2021 Memologic.com - Coffeerights Tal Ivgi</h4>
         <div class="social-links">
