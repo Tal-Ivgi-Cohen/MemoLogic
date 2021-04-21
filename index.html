@@ -9,14 +9,16 @@
 
 <body onload="initPage()">
     <div class="main-screen" onclick="toggleMenu()"></div>
-    <header class="nav-container container flex space-between align-center">
-        <div class="logo">MemoLogic</div>
-        <ul class=" main-nav clean-list flex">
-            <li><a class="flex align-center  justify-content active" href="#">Gallery</a></li>
-            <li><a class="flex align-center justify-content" href="#">Memes</a></li>
-            <li><a class="flex align-center justify-content" href="#">About</a></li>
-        </ul>
-        <button class="btn-menu" onclick="toggleMenu()">☰</button>
+
+    <header class="container flex space-between align-center">
+        <div class="nav-container container flex space-between align-center">
+            <div class="logo">MemoLogic</div>
+            <ul class=" main-nav clean-list flex">
+                <li><a class="flex align-center  justify-content active" href="#">Gallery</a></li>
+                <li><a class="flex align-center justify-content" href="#">Memes</a></li>
+                <li><a class="flex align-center justify-content" href="#">About</a></li>
+            </ul>
+            <button class="btn-menu" onclick="toggleMenu()">☰</button>
         </div>
     </header>
 
@@ -31,62 +33,64 @@
     </section>
 
     <div class="canvas-container " hidden>
-        <div class="canvas-wrap">
+        <div class="canvas-wrap flex align-center justify-content">
             <button class="canvas-btn" onclick="closeCanvas()">
                 <img src="icon/close.PNG" width=15 heigh=15>
             </button>
             <div class="flex space-between"><canvas class="my-canvas" width="500" height="500" onclick="drawText(event)">
             </canvas></div>
-            <div class="canvas-editor space-around flex-column ">
-                <div class="canvas-text flex">
+            <div class="canvas-editor flex-column justify-content">
+                <h3>Add your Text</h3>
+                <div class="canvas-text flex  justify-content ">
                     <input oninput="onAddText(this.value)" type="text" value="">
                 </div>
                 <div class="line-editor">
                     <button class="canvas-btn" onclick="onMoveLine(-20)">
-                        <img src="icon/up.PNG" width=15 heigh=15>
+                        <img src="icon/up.PNG" width=25 heigh=25>
                     </button>
                     <button class="canvas-btn" onclick="onMoveLine(20)">
-                        <img src="icon/down-arrow.PNG" width=15 heigh=15>
+                        <img src="icon/down-arrow.PNG" width=25 heigh=25>
                     </button>
                     <button class="canvas-btn" onclick="onSwitchLine()">
-                    <img src="icon/up-and-down-opposite-double-arrows-side-by-side.png" width=15 heigh=15>
+                    <img src="icon/up-and-down-opposite-double-arrows-side-by-side.png" width=20 heigh=20>
                     </button>
                     <button class="canvas-btn" onclick="onAddLine()">
-                        <img src="icon/add.png" width=15 heigh=15>
+                        <img src="icon/add.png" width=20 heigh=20>
                     </button>
                     <button class="canvas-btn" onclick="onRemoveLine()">
-                        <img src="icon/trash.png" width=15 heigh=15>       
+                        <img src="icon/trash.png" width=20 heigh=20>       
                     </button>
 
                 </div>
                 <div class="text-editor">
                     <button class="canvas-btn" onclick="onChangeSize(5)">
-                        <img src="icon/increase font - icon.png" width=15 heigh=15>
+                        <img src="icon/increase font - icon.png" width=20 heigh=20>
                     </button>
                     <button class="canvas-btn" onclick="onChangeSize(-5)">
-                        <img src="icon/decrease font - icon.png" width=15 heigh=15>
+                        <img src="icon/decrease font - icon.png" width=20 heigh=20>
                     </button>
                     <button class="canvas-btn" onclick="onChangeAlign('right')">
-                        <img src="icon/align-to-right.png" width=15 heigh=15>
+                        <img src="icon/align-to-left.png" width=20 heigh=20>
                     </button>
                     <button class="canvas-btn" onclick="onChangeAlign('center')">                   
-                        <img src="icon/center-text-alignment.png" width=15 heigh=15>
+                        <img src="icon/center-text-alignment.png" width=20 heigh=20>
                     </button>
                     <button class="canvas-btn" onclick="onChangeAlign('left')">
-                        <img src="icon/align-to-left.png" width=15 heigh=15>
+                        <img src="icon/align-to-right.png" width=20 heigh=20>
                     </button>
+
                     <select onchange="onChangeFont(this.value)">
                 <option value="Impact">Impact</option>
                 <option value="Ariel">Ariel</option>
                 </select>
-                    <input onchange="onSetStrokeColor(this.value)" type="color" id="line-color" name="line-color"><img src="icon/text stroke.png" width=15 heigh=15>
-                    <input onchange="onSetFillColor(this.value)" type="color" id="fill-color" name="fill-color"><img src="icon/paint-board-and-brush.png" width=15 heigh=15>
+                    <input onchange="onSetStrokeColor(this.value)" type="color" id="line-color" name="line-color"><img src="icon/text stroke.png" width=20 heigh=20>
+                    <input onchange="onSetFillColor(this.value)" type="color" id="fill-color" name="fill-color"><img src="icon/paint-board-and-brush.png" width=20 heigh=20>
                 </div>
                 <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
                     <input name="img" id="imgData" type="hidden" />
-                    <button class="canvas-btn" type="submit"><img src="icon/share.PNG" width=15 heigh=15/></button>
+                    <button class="canvas-btn" type="submit"><img src="icon/share.PNG" width=20 heigh=20/></button>
                     <button class="canvas-btn">     
-                    <a href="#"  onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=15 heigh=15/></a></button>
+                    <a href="#"  onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=20 heigh=20/></a></button>
                     <div class="share-container"></div>
                 </form>
 

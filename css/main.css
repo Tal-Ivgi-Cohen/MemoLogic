@@ -96,6 +96,13 @@
         margin: 0;
     }
     
+    .canvas-text input {
+        font-size: 1rem;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 10px;
+    }
+    
     .my-canvas {
         flex-basis: 50%;
         flex-direction: row;
@@ -108,17 +115,8 @@
     .canvas-editor {
         flex-basis: 50%;
         flex-direction: column;
-        width: 500px;
-    }
-    
-    .canvas-text {
-        text-decoration: none;
-        width: 186.5px;
-        height: 30px;
-        margin: 0 200px 1px;
-        border-radius: 6px;
-        background-color: #ffffff;
         text-align: center;
+        width: 500px;
     }
     
     .footer-container {
@@ -239,17 +237,11 @@
         }
     }
     
-    @media (min-width: 1300px) {
-        .container {
-            max-width: 1300px;
-        }
-    }
-    
     @media (max-width: 900px) {
         .main-screen {
             position: fixed;
-            bottom: 0;
-            right: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, .5);
@@ -266,11 +258,12 @@
             flex-direction: column;
             position: fixed;
             right: 23%;
-            bottom: 20%;
-            background-color: rgba(228, 181, 93, 0.9);
-            border: 1px solid #ebebeb;
-            box-shadow: 0px 0px 10px rgba(231, 133, 40, 0.16);
-            transform: translateY(-140%);
+            top: 0%;
+            background-color: rgba(235, 153, 60, 0.9);
+            height: 100vh;
+            border-left: 1px solid #ebebeb;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .16);
+            transform: translateY(100%);
             transition: transform .6s;
         }
         body.menu-open .main-nav {
