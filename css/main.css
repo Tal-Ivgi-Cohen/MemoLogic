@@ -16,18 +16,6 @@ header {
     padding-right: 20px;
 }
 
-
-/*main-nav {
-    font-family: LatoBold;
-    color: #ffffff;
-    position: static;
-    background-color: transparent;
-    height: initial;
-    width: initial;
-    transform: translateY(0%);
-    flex-direction: row;
-}*/
-
 .main-nav {
     align-items: center;
 }
@@ -77,16 +65,17 @@ header {
 .canvas-btn {
     width: 40px;
     height: 40px;
-    margin: 24.7px 12.8px 0.2px 12.6px;
-    padding: 3.8px 3.2px 2.9px 3.5px;
+    margin: 24.7px 0px 0.2px 0px;
+    padding: 3.8px 0px 2.9px 0px;
     border-radius: 6px;
-    background-color: lightgoldenrodyellow
+    background-color: white
 }
 
 .canvas-text {
+    text-decoration: none;
     width: 186.5px;
     height: 30px;
-    margin: 0 0 1px;
+    margin: 0 200px 1px;
     border-radius: 6px;
     background-color: #ffffff;
     text-align: center;
@@ -153,8 +142,8 @@ header {
     height: 30px;
     margin: 10px 12.8px 0.2px 12.6px;
     padding: 3.8px 3.2px 2.9px 3.5px;
-    border-radius: 20px;
-    background-color: lightgoldenrodyellow
+    border-radius: 6px;
+    background-color: white
 }
 
 .fa {

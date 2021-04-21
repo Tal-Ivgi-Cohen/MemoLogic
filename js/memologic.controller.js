@@ -7,6 +7,8 @@ function initPage() {
     gElCanvas = document.querySelector('.my-canvas');
     gCtx = gElCanvas.getContext('2d');
     renderGallery();
+    resizeCanvas();
+
 }
 
 function onChosenImg(id) {
@@ -17,11 +19,13 @@ function onChosenImg(id) {
 }
 
 function onOpenCanvas() {
-    document.querySelector('.canvas-container').hidden = false
+    document.querySelector('.canvas-container').hidden = false;
+    document.querySelector('.gallery').style.display = 'none';
 }
 
 function closeCanvas() {
     document.querySelector('.canvas-container').hidden = true;
+    document.querySelector('.gallery').style.display = 'block';
 }
 
 function resizeCanvas() {
@@ -83,9 +87,9 @@ function onMoveLine(val) {
 function onSwitchLine() {
     const meme = getGmeme();
     switchLine()
-    document.querySelector('.line-editor input').value = meme.lines[meme.selectedLineIdx].txt;
-    document.querySelector('.line-editor input').focus()
-    document.querySelector('.line-editor input').select()
+    document.querySelector('.canvas-text input').value = meme.lines[meme.selectedLineIdx].txt;
+    document.querySelector('.canvas-text input').focus()
+    document.querySelector('.canvas-text input').select()
 }
 
 function onAddLine() {
@@ -129,7 +133,7 @@ function uploadImg(elForm, ev) {
         <button class="canvas-btn"><a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
         <img src="./icon/facebook-logo.PNG" width=15 heigh=15/>   
         </a></button>
-        <button class="canvas-btn">   <a href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="share/whatsapp/share"  
+        <button class="canvas-btn"><a href="whatsapp://send?text=${uploadedImgUrl}&t=${uploadedImgUrl}" data-action="share/whatsapp/share"  
         target="_blank"> <img src="icon/whatsapp.PNG" width=20 heigh=20/> </a></button> 
         `
     }
