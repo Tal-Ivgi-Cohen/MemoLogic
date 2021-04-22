@@ -4,16 +4,15 @@
         font-family: brands;
     }
     
-    header {
+    .main-header {
         width: 100%;
         background-color: #0004ff;
         border-bottom: 7px #1e1e1e solid;
     }
     
     .container {
+        max-width: 980px;
         margin: 0 auto;
-        padding-left: 20px;
-        padding-right: 20px;
     }
     
     .logo {
@@ -29,15 +28,18 @@
         align-items: center;
     }
     
+    .nav-container {
+        height: 100%;
+    }
+    
     .main-nav a {
         font-family: LatoBold;
         color: whitesmoke;
         text-decoration: none;
         list-style: none;
-        height: 72px;
+        height: 130px;
         width: 130px;
         transition: box-shadow .3s;
-        font-size: 1.5rem;
     }
     
     .main-nav a.active {
@@ -120,7 +122,7 @@
     }
     
     .footer-container {
-        height: 125px;
+        height: 150px;
         text-align: center;
         background-color: #0004ff;
         border-top: 7px #1e1e1e solid;
@@ -185,10 +187,6 @@
         justify-content: space-between;
     }
     
-    .space-around {
-        justify-content: space-around;
-    }
-    
     .align-center {
         align-items: center;
     }
@@ -210,19 +208,20 @@
     
     @media (min-width: 300px) {
         .container {
-            max-width: 350px;
+            max-width: 360px;
         }
         .gallery-items {
-            grid-template-columns: repeat(auto-fill, 200px);
+            grid-template-columns: repeat(auto-fill, 150px);
+            grid-template-rows: repeat(auto-fill, 150px);
+        }
+        .btn-menu {
+            display: block;
         }
     }
     
     @media (min-width: 640px) {
         .container {
             max-width: 600px;
-        }
-        .gallery-items {
-            grid-template-columns: repeat(auto-fill, 200px);
         }
     }
     
@@ -262,12 +261,12 @@
             flex-direction: column;
             position: fixed;
             right: 23%;
-            top: 0%;
-            background-color: rgba(235, 153, 60, 0.9);
-            height: 100vh;
-            border-left: 1px solid #ebebeb;
+            top: 10%;
+            background-color: rgba(90, 206, 252, 0.9);
+            /*height: 100vh;*/
+            border: 1px solid #ebebeb;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, .16);
-            transform: translateY(100%);
+            transform: translateY(-140%);
             transition: transform .6s;
         }
         body.menu-open .main-nav {

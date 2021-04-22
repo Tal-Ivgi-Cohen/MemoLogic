@@ -4,13 +4,11 @@
 
 html {
     font-family: Lato, serif;
-    line-height: 1.25;
+    background: #e3e3e3;
 }
 
 body {
     margin: 0;
-    background: #e3e3e3;
-    font-size: .875rem;
 }
 
 h1,

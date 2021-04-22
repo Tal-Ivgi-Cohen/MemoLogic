@@ -7,14 +7,12 @@ function initPage() {
     gElCanvas = document.querySelector('.my-canvas');
     gCtx = gElCanvas.getContext('2d');
     renderGallery();
-    resizeCanvas();
-
 }
 
 function onChosenImg(id) {
     changeMemeImg(id);
-    resizeCanvas();
     renderCanvas();
+    resizeCanvas();
     onOpenCanvas()
 }
 
@@ -50,7 +48,8 @@ function drawImg() {
 
 function drawText() {
     const meme = getGmeme();
-    meme.lines.forEach(line => {
+    meme.lines.forEach((line, idx) => {
+        // if(idx===)
         gCtx.textAlign = `${line.align}`;
         gCtx.font = `${line.size}px ${line.font}`;
         gCtx.fillStyle = `${line.color}`;

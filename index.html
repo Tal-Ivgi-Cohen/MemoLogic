@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memo Logic</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="image/favicon2.png">
@@ -10,110 +13,111 @@
 <body onload="initPage()">
     <div class="main-screen" onclick="toggleMenu()"></div>
 
-    <header class="container flex space-between align-center">
-        <div class="nav-container container flex space-between align-center">
+    <header class="main-header">
+        <nav class="nav-container container flex space-between align-center">
             <div class="logo">MemoLogic</div>
-            <ul class=" main-nav clean-list flex">
+            <ul class=" main-nav flex justify-content align-center clean-list">
                 <li><a class="flex align-center  justify-content active" href="#">Gallery</a></li>
                 <li><a class="flex align-center justify-content" href="#">Memes</a></li>
                 <li><a class="flex align-center justify-content" href="#">About</a></li>
             </ul>
             <button class="btn-menu" onclick="toggleMenu()">☰</button>
-        </div>
+        </nav>
     </header>
+    <main class="main-content container">
+        <section class="gallery">
+            <div class="gallery-container">
+                <h2 class="gallery-title">Gallery</h2>
+                <h3 class="gallery-subtitle">You need to select an image, add some text and download your funny picture to your device</h3>
+            </div>
+            <div class="gallery-items row list">
 
-    <section class="gallery">
-        <div class="gallery-container">
-            <h2 class="gallery-title">Gallery</h2>
-            <h3 class="gallery-subtitle">You need to select an image, add some text and download your funny picture to your device</h3>
-        </div>
-        <div class="gallery-items row list">
+            </div>
+        </section>
 
-        </div>
-    </section>
-
-    <div class="canvas-container " hidden>
-        <div class="canvas-wrap flex align-center justify-content">
-            <button class="canvas-btn" onclick="closeCanvas()">
+        <div class="canvas-container " hidden>
+            <div class="canvas-wrap flex align-center justify-content">
+                <button class="canvas-btn" onclick="closeCanvas()">
                 <img src="icon/close.PNG" width=15 heigh=15>
             </button>
-            <div class="flex space-between"><canvas class="my-canvas" width="500" height="500" onclick="drawText(event)">
+                <div class="flex space-between"><canvas class="my-canvas" width="500" height="500" onclick="drawText(event)">
             </canvas></div>
-            <div class="canvas-editor flex-column justify-content">
-                <h3>Add your Text</h3>
-                <div class="canvas-text flex  justify-content ">
-                    <input oninput="onAddText(this.value)" type="text" value="">
-                </div>
-                <div class="line-editor">
-                    <button class="canvas-btn" onclick="onMoveLine(-20)">
+                <div class="canvas-editor flex-column justify-content">
+                    <h3>Add your Text</h3>
+                    <div class="canvas-text flex  justify-content ">
+                        <input oninput="onAddText(this.value)" type="text" value="">
+                    </div>
+                    <div class="line-editor">
+                        <button class="canvas-btn" onclick="onMoveLine(-20)">
                         <img src="icon/up.PNG" width=25 heigh=25>
                     </button>
-                    <button class="canvas-btn" onclick="onMoveLine(20)">
+                        <button class="canvas-btn" onclick="onMoveLine(20)">
                         <img src="icon/down-arrow.PNG" width=25 heigh=25>
                     </button>
-                    <button class="canvas-btn" onclick="onSwitchLine()">
+                        <button class="canvas-btn" onclick="onSwitchLine()">
                     <img src="icon/up-and-down-opposite-double-arrows-side-by-side.png" width=20 heigh=20>
                     </button>
-                    <button class="canvas-btn" onclick="onAddLine()">
+                        <button class="canvas-btn" onclick="onAddLine()">
                         <img src="icon/add.png" width=20 heigh=20>
                     </button>
-                    <button class="canvas-btn" onclick="onRemoveLine()">
+                        <button class="canvas-btn" onclick="onRemoveLine()">
                         <img src="icon/trash.png" width=20 heigh=20>       
                     </button>
 
-                </div>
-                <div class="text-editor">
-                    <button class="canvas-btn" onclick="onChangeSize(5)">
+                    </div>
+                    <div class="text-editor">
+                        <button class="canvas-btn" onclick="onChangeSize(5)">
                         <img src="icon/increase font - icon.png" width=20 heigh=20>
                     </button>
-                    <button class="canvas-btn" onclick="onChangeSize(-5)">
+                        <button class="canvas-btn" onclick="onChangeSize(-5)">
                         <img src="icon/decrease font - icon.png" width=20 heigh=20>
                     </button>
-                    <button class="canvas-btn" onclick="onChangeAlign('right')">
+                        <button class="canvas-btn" onclick="onChangeAlign('right')">
                         <img src="icon/align-to-left.png" width=20 heigh=20>
                     </button>
-                    <button class="canvas-btn" onclick="onChangeAlign('center')">                   
+                        <button class="canvas-btn" onclick="onChangeAlign('center')">                   
                         <img src="icon/center-text-alignment.png" width=20 heigh=20>
                     </button>
-                    <button class="canvas-btn" onclick="onChangeAlign('left')">
+                        <button class="canvas-btn" onclick="onChangeAlign('left')">
                         <img src="icon/align-to-right.png" width=20 heigh=20>
                     </button>
 
-                    <select onchange="onChangeFont(this.value)">
+                        <select onchange="onChangeFont(this.value)">
                 <option value="Impact">Impact</option>
                 <option value="Ariel">Ariel</option>
                 </select>
-                    <input onchange="onSetStrokeColor(this.value)" type="color" id="line-color" name="line-color"><img src="icon/text stroke.png" width=20 heigh=20>
-                    <input onchange="onSetFillColor(this.value)" type="color" id="fill-color" name="fill-color"><img src="icon/paint-board-and-brush.png" width=20 heigh=20>
+                        <input onchange="onSetStrokeColor(this.value)" type="color" id="line-color" name="line-color"><img src="icon/text stroke.png" width=20 heigh=20>
+                        <input onchange="onSetFillColor(this.value)" type="color" id="fill-color" name="fill-color"><img src="icon/paint-board-and-brush.png" width=20 heigh=20>
+                    </div>
+                    <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                        <input name="img" id="imgData" type="hidden" />
+                        <button class="canvas-btn" type="submit"><img src="icon/share.PNG" width=20 heigh=20/></button>
+
+                        <a class="canvas-btn" href="#" onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=25 heigh=25/></a>
+                        <div class="share-container"></div>
+                    </form>
+
+
+
                 </div>
-                <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
-                    <input name="img" id="imgData" type="hidden" />
-                    <button class="canvas-btn" type="submit"><img src="icon/share.PNG" width=20 heigh=20/></button>
-
-                    <a class="canvas-btn" href="#" onclick="downloadCanvas(this)" download="my-img.jpg"><img src="icon/download.PNG" width=25 heigh=25/></a>
-                    <div class="share-container"></div>
-                </form>
-
-
-
             </div>
         </div>
-    </div>
-    </div>
-
-    <footer class="footer-container container">
-        <div class="footer-logo">MemoLogic</div>
-        <h4> © 2021 Memologic.com - Coffeerights Tal Ivgi</h4>
-        <div class="social-links">
-            <button class="footer-btn"><a class="fa facebook" href="https://www.facebook.com/tal.ivgi/"></a> </button>
-            <button class="footer-btn"><a class="fa linkedin" href="https://www.linkedin.com/in/tal-ivgi-0167a9139/"></a> </button>
         </div>
 
-    </footer>
+        <footer class="main-footer">
+            <div class="footer-container container">
+                <div class="footer-logo">MemoLogic</div>
+                <h4> © 2021 Memologic.com - Coffeerights Tal Ivgi</h4>
+                <div class="social-links">
+                    <button class="footer-btn"><a class="fa facebook" href="https://www.facebook.com/tal.ivgi/"></a> </button>
+                    <button class="footer-btn"><a class="fa linkedin" href="https://www.linkedin.com/in/tal-ivgi-0167a9139/"></a> </button>
+                </div>
+            </div>
+        </footer>
 
-    <script src="js/util.service.js"></script>
-    <script src="js/meme.service.js"></script>
-    <script src="js/memologic.controller.js"></script>
+        <script src="js/util.service.js"></script>
+        <script src="js/meme.service.js"></script>
+        <script src="js/memologic.controller.js"></script>
 
 </body>
 
