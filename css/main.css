@@ -11,6 +11,8 @@
     
     .container {
         margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     
     .logo {
@@ -71,6 +73,10 @@
         padding: 2.5px 0px 2.5px 0px;
         border-radius: 6px;
         background-color: white
+    }
+
+    .gallery{
+        margin-bottom: 10px;
     }
     
     .gallery-items {
