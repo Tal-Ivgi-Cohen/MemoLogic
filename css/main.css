@@ -233,10 +233,6 @@
             flex-wrap: wrap;
         }
 
-        .gallery-items {
-            grid-template-columns: repeat(auto-fill, 150px);
-            grid-template-rows: repeat(auto-fill, 150px);
-        }
     }
     
     @media (min-width: 640px) {
@@ -313,5 +309,9 @@
 
         .canvas-wrap{
             flex-direction: column;
+        }
+        .gallery-items {
+            grid-template-columns: repeat(auto-fill, 150px);
+            grid-template-rows: repeat(auto-fill, 150px);
         }
     }
