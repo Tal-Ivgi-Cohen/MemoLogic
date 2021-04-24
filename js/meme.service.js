@@ -95,26 +95,26 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [{
             txt: 'First line',
-            size: 60,
+            size: 40,
             align: 'center',
             color: 'white',
             stroke: 'black',
             font: 'Impact',
             pos: {
-                x: 250,
-                y: 150,
+                x: 150,
+                y: 100,
             }
         },
         {
             txt: 'Second line',
-            size: 60,
+            size: 40,
             align: 'center',
             color: 'white',
             stroke: 'black',
             font: 'Impact',
             pos: {
-                x: 250,
-                y: 400,
+                x: 150,
+                y: 250,
             }
         },
     ]
@@ -164,8 +164,8 @@ function createLine() {
         stroke: 'black',
         font: 'Impact',
         pos: {
-            x: 250,
-            y: getRandomIntInclusive(200, 390)
+            x: 150,
+            y: getRandomIntInclusive(110, 280)
         }
     }
     return line

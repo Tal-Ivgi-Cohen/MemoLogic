@@ -18,12 +18,12 @@ function onChosenImg(id) {
 
 function onOpenCanvas() {
     document.querySelector('.canvas-container').hidden = false;
-    document.querySelector('.gallery').style.display = 'none';
+    document.querySelector('.gallery').style.visibility = 'hidden';
 }
 
 function closeCanvas() {
     document.querySelector('.canvas-container').hidden = true;
-    document.querySelector('.gallery').style.display = 'block';
+    document.querySelector('.gallery').style.visibility = 'visible';
 }
 
 function resizeCanvas() {
@@ -41,7 +41,7 @@ function drawImg() {
     var img = new Image()
     img.src = `image/${meme.imgId}.jpg`;
     img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) //img,x,y,xend,yend
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         drawText();
     }
 }
@@ -49,7 +49,6 @@ function drawImg() {
 function drawText() {
     const meme = getGmeme();
     meme.lines.forEach((line, idx) => {
-        // if(idx===)
         gCtx.textAlign = `${line.align}`;
         gCtx.font = `${line.size}px ${line.font}`;
         gCtx.fillStyle = `${line.color}`;
