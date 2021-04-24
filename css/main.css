@@ -157,6 +157,7 @@
     
     .footer-logo {
         color: #ffffff;
+        margin-bottom: 10px;
         font-size: 1.5rem;
         margin-block-start: 10px;
         font-family: shadowInto, sans-serif;
