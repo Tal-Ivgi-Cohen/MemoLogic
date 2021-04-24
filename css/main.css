@@ -137,9 +137,13 @@
     .text-editor{
         margin-bottom: 5px;
     }
+
+    footer{
+        width: 100%;
+    }
+    
     .footer-container {
         height: 150px;
-        width: 100%;
         text-align: center;
         background-color: #0004ff;
         border-top: 7px #1e1e1e solid;

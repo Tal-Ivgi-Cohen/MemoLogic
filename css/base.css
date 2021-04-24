@@ -1,17 +1,17 @@
 * {
     box-sizing: border-box;
-    user-select: none;
-
 }
 
 html {
     font-family: Lato, serif;
     background: #e3e3e3;
+    line-height: 1.25;
 }
 
 body {
     margin: 0;
-    font-size: 1rem;
+    background: #e3e3e3;
+    font-size: .875rem;
 }
 
 h1,
