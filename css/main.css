@@ -75,6 +75,10 @@
         background-color: white
     }
 
+    .share-btn{
+        margin-right: 10px;
+    }
+
     .gallery-subtitle{
         margin-bottom: 10px;
     }
